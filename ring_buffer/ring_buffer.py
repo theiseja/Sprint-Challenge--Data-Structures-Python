@@ -9,7 +9,11 @@ class RingBuffer:
 
     def append(self, item):
         # TBC
-        pass
+        self.storage[self.current] = item 
+        if self.current == (self.capacity -1):
+                self.current = 0
+        else:
+            self.current += 1
 
     def get(self):
         # Note:  This is the only [] allowed
